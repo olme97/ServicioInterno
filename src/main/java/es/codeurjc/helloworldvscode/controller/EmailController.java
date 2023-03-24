@@ -17,8 +17,8 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
-    @PostMapping("/followMessage")
-    public void sendFollowMessage(@RequestBody EmailRequest request) {
+    @PostMapping("/confirmarPedido")
+    public void sendconfirmarPedido(@RequestBody EmailRequest request) {
         emailService.sendTestMessage(new Mail(request.to, request.subject, request.body));
     }
 

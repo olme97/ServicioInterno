@@ -38,7 +38,7 @@ public class EmailService {
     }
 
     public void sendTestMessage(Mail mail) {
-        if (transport != null) {
+        if (transport == null) {
             try {
                 transport = session.getTransport("smtp");
                 System.out.printf(user);
