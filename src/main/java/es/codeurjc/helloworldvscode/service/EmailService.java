@@ -29,11 +29,11 @@ public class EmailService {
 
     public EmailService() throws MessagingException {
         Properties properties = new Properties();
-        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.host", "smtp.office365.com");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.auth", true);
         properties.put("mail.smtp.port", 587);
-        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        properties.put("mail.smtp.ssl.trust", "smtp.office365.com");
         session = Session.getDefaultInstance(properties);
     }
 
@@ -43,7 +43,7 @@ public class EmailService {
                 transport = session.getTransport("smtp");
                 System.out.printf(user);
                 System.out.printf(password);
-                transport.connect("smtp.gmail.com", user, password);
+                transport.connect("smtp.office365.com", user, password);
             } catch (Exception ex) {
                 ex.printStackTrace();
                 return;
